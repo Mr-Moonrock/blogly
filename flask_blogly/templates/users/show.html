@@ -15,16 +15,25 @@
         <h1> {{ user.full_name }} </h1>
         
         <form>
-            <button class="btn btn-primary btn-sm"
-                    formaction="/users/{{ user.id }}/edit"
-                    form method="GET"> Edit 
+            <button class="btn btn-primary btn-sm" formaction="/users/{{user.id}}/edit" formmethod="GET"> Edit 
             </button>
-            <button class="btn btn-primary btn-sm"
-                    formaction="/users/{{ user.id }}/delete"
-                    form method="POST"> Delete 
+            <button class="btn btn-primary btn-sm" formaction="/users/{{user.id}}/delete" formmethod="POST"> Delete 
             </button>
         </form>
 
+            <h2 class="mt4"> Posts </h2>
+
+            <ul>
+                {% for post in user.posts %}
+
+                <li>
+                    <a href="/posts/{{ post.id}}"> {{ post.title }}</a>
+                    <small> {{ post.friendly_date }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <p><a href="/users/{{ user.id }}/posts/new" class="btn btn-primary"> Add Post </a></p>
     </div>
 </div>
 

@@ -1,6 +1,10 @@
-nav {
-    background-color: black;
+h1{
+    color: white;
     text-align: center;
+}
+nav {
+    background-color: lightskyblue;
+    text-align: left;
 }
 a {
     font-size: 30px;
